@@ -10,7 +10,6 @@
         </header>
         <section class="IBW">
             <h1>Ideal Body Weight Calculator</h1>
-            <form action="submission.html" method="GET">
                 <span>Gender:</span>
                 <input id="male" name="gender" type="radio" value="male">
                 <label for="male">Male</label>
@@ -27,41 +26,46 @@
                 <input id="ABWlbs" name="ABWlbs" type="number">
                 <label for="ABWkg">or kg</label>
                 <input id="ABWkg" name="ABWkg" type="number">
+                <button onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'))">Calc</button>
                 <br>
-                <input type="submit" value="Calculate">
-            </form>
             <div class="output">
                 <h1>IBW = </h1>
+                <h2 id="solution">2</h2>
             </div>
         </section>
         <section class="needs">
             <h1>Nutrition Needs Calculator</h1>
-            <form action="submission.html" method="GET">
                 <label for="BWlbs">Body Weight: lbs </label>
                 <input id="BWlbs" name="BWlbs" type="number">
                 <label for="BWkg">or kg</label>
                 <input id="BWkg" name="BWkg" type="number">
                 <br>
+
                 <h2>Kcal Range</h2>
-                <input id="lowEndKcal" name="lowEndKcal" type="range" min="1" max="50" step="1">
+                <input id="lowEndKcal" name="lowEndKcal" type="range" min="1" max="50" step="1" oninput="showRange(this.value); calcKcal1()">
                 <label for="lowEndKcal">Kcal/kg</label>
+                <p id="textInputLow" >26</p>
                 <br>
-                <input id="highEndKcal" name="highEndKcal" type="range" min="1" max="50" step="1">
+                <input id="highEndKcal" name="highEndKcal" type="range" min="1" max="50" step="1" oninput="showRange2(this.value); calcKcal2()">
                 <label for="highEndKcal">Kcal/kg</label>
+                <p id="textInputHigh">26</p>
+                <h2 id="range1">-</h2> 
+                <h2 id="range2">-</h2>
+                
                 <h2>Protein Range</h2>
-                <input id="lowEndPro" name="lowEndPro" type="range" min="0.1" max="4.0" step="0.05">
+                <input id="lowEndPro" name="lowEndPro" type="range" min="0.1" max="4.0" step="0.1" oninput="showRangeP(this.value); calcPro1()">
                 <label for="lowEndPro">Kcal/kg</label>
+                <p id="proInputLow" >2.1</p>
                 <br>
-                <input id="highEndPro" name="highEndPro" type="range" min="0.1" max="4.0" step="0.05">
+                <input id="highEndPro" name="highEndPro" type="range" min="0.1" max="4.0" step="0.1" oninput="showRangeP2(this.value); calcPro2()">
                 <label for="highEndPro">Kcal/kg</label>
+                <p id="proInputHigh" >2.1</p>
+                <h2 id="range3">-</h2> 
+                <h2 id="range4">-</h2>
+
                 <br>
                 <br>
-                <input type="submit" value="Calculate">
-            </form>
-            <div class="output">
-                <h1>_Kcal/day</h1>
-                <h1>_g Protein/day</h1>
-            </div>
         </section>
+        <script src="RDCalc.js"></script>
     </body>
 </html>

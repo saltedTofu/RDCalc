@@ -1,12 +1,8 @@
-//Variables to calculate IBW and function for calculating IBW
+//Variables to calculate IBW and function for calculating IBW/%IBW
 let heightInInches;
 let IBW;
-let solution=document.getElementById('solution');
-let inchInput=document.getElementById('inches').value;
-let feetInput=document.getElementById('feet').value;
-let male=document.getElementById('male');
-let female=document.getElementById('female');
-function calcIdealWeight(inchInput,feetInput,male,female)
+let percentIBW;
+function calcIdealWeight(inchInput,feetInput,male,female,ABW)
 {
     if(male.checked)
     {
@@ -41,6 +37,8 @@ function calcIdealWeight(inchInput,feetInput,male,female)
     {
         document.getElementById('solution').innerHTML=IBW + 'lbs or ' + Math.round(IBW/2.2) + 'kg' + ' +/- 10%';
     }
+    percentIBW = Math.round(((parseInt(ABW,10))/(IBW/2.2)*100));
+    document.getElementById('solution2').innerHTML=percentIBW + "%";  
 }
 //Function to show Kcal/Kg range values
 function showRange(val)
@@ -88,4 +86,13 @@ function calcPro2()
     highPro=Math.round((document.getElementById('highEndPro').value * document.getElementById('BWkg').value));
     document.getElementById('range4').innerHTML = highPro;
 
+}
+//function to change nav color
+function navChangeColor(element)
+{
+    element.style.fontWeight= 'bold';
+}
+function navChangeBack(element)
+{
+    element.style.fontWeight = 'normal';
 }

@@ -3,10 +3,21 @@
     <head>
         <link href="./RDCalc.css" type="text/css" rel="stylesheet">
         <script src="RDCalc.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-            <h1>RD Calc</h1>
+            <div class="logo">
+                <img src="Dietitian Calc.png">
+            </div>
+            <div class="nav">
+                <h1 id="needs" onmouseover="navChangeColor(this)" onmouseout="navChangeBack(this)">Needs</h1>
+                <h1 id="tubeFeeding" onmouseover="navChangeColor(this)" onmouseout="navChangeBack(this)">Tube Feeding</h1>
+                <h1 id="TPN/PPN" onmouseover="navChangeColor(this)" onmouseout="navChangeBack(this)">TPN/PPN</h1>
+            </div>
+            <div class="donate">
+            </div>
         </header>
         <section class="IBW">
             <h1>Ideal Body Weight Calculator</h1>
@@ -26,11 +37,13 @@
                 <input id="ABWlbs" name="ABWlbs" type="number">
                 <label for="ABWkg">or kg</label>
                 <input id="ABWkg" name="ABWkg" type="number">
-                <button onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'))">Calc</button>
+                <button onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value)">Calc</button>
                 <br>
             <div class="output">
                 <h1>IBW = </h1>
-                <h2 id="solution">2</h2>
+                <h2 id="solution"></h2>
+                <h1 id='percentIBW'>%IBW = </h1>
+                <h2 id="solution2"></h2>
             </div>
         </section>
         <section class="needs">

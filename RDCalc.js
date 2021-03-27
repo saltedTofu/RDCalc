@@ -2,7 +2,8 @@
 let heightInInches;
 let IBW;
 let percentIBW;
-function calcIdealWeight(inchInput,feetInput,male,female,ABW)
+let selectedUnit;
+function calcIdealWeight(inchInput,feetInput,male,female,ABW,unit)
 {
     if(male.checked)
     {
@@ -36,6 +37,11 @@ function calcIdealWeight(inchInput,feetInput,male,female,ABW)
     if(female.checked || male.checked)
     {
         document.getElementById('solution').innerHTML=IBW + 'lbs or ' + Math.round(IBW/2.2) + 'kg' + ' +/- 10%';
+    } 
+    selectedUnit = unit.options[unit.selectedIndex].value;
+    if(selectedUnit =='lbs')
+    {
+        ABW=parseInt(ABW,10)/2.2;
     }
     percentIBW = Math.round(((parseInt(ABW,10))/(IBW/2.2)*100));
     document.getElementById('solution2').innerHTML=percentIBW + "%";  

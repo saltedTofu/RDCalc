@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Dietitian Calc</title>
         <link href="./RDCalc.css" type="text/css" rel="stylesheet">
         <script src="RDCalc.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -32,16 +33,21 @@
                 <input id="feet" name="feet" type="number">
                 <label for="inches">Inches: </label>
                 <input id="inches" name="inches" type="number">
-                <br>
-                <label for="ABWlbs">Actual Body Weight: lbs </label>
-                <input id="ABWlbs" name="ABWlbs" type="number">
-                <label for="ABWkg">or kg</label>
+                <br> 
+                <label for="ABWkg">Actual Body Weight</label>
                 <input id="ABWkg" name="ABWkg" type="number">
-                <button onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value)">Calc</button>
+                <label for="lbsOrKg">lbs or kg?</label>
+                <select id="lbsOrKg" name="lbsOrKg">
+                    <option value="lbs">lbs</option>
+                    <option value="kg">kg</option>
+                </select>
+                <button onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'))">Calc</button>
                 <br>
             <div class="output">
+                <br>
                 <h1>IBW = </h1>
                 <h2 id="solution"></h2>
+                <br>
                 <h1 id='percentIBW'>%IBW = </h1>
                 <h2 id="solution2"></h2>
             </div>
@@ -75,7 +81,6 @@
                 <p id="proInputHigh" >2.1</p>
                 <h2 id="range3">-</h2> 
                 <h2 id="range4">-</h2>
-
                 <br>
                 <br>
         </section>

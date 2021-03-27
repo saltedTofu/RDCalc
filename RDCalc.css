@@ -11,7 +11,6 @@ header{
     justify-content:space-between;
     text-align:center;
     border-bottom: 3px solid rgba(0,0,0,.1);
-    
 }
 .nav{
     width:60%;
@@ -37,8 +36,11 @@ header{
     text-align:center;
 }
 #percentIBW{
-    display:block;
-}  
+    display:inline-block;
+}
+#solution2{
+    display:inline-block;
+}
 .needs{
     min-width:600px;
     text-align:center;

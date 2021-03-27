@@ -1,10 +1,11 @@
-//Variables to calculate IBW and function for calculating IBW/%IBW
-let heightInInches;
-let IBW;
-let percentIBW;
-let selectedUnit;
+//Functions for calculating IBW/%IBW
+
 function calcIdealWeight(inchInput,feetInput,male,female,ABW,unit)
 {
+    let heightInInches;
+    let IBW;
+    let percentIBW;
+    let selectedUnit;
     if(male.checked)
     {
         heightInInches=(parseInt(feetInput,10)*12)+parseInt(inchInput,10);
@@ -58,15 +59,30 @@ function showRange2(val)
 //Function calculate kcal range
 function calcKcal1()
 {
+    let unit = document.getElementById('lbsOrKg2');
+    let selectedUnit = unit.options[unit.selectedIndex].value;
+    let ABW = document.getElementById('BWkg').value;
+    if(selectedUnit =='lbs')
+    {
+        ABW=parseInt(ABW,10)/2.2;
+        
+    }
     let lowKcal;
-    lowKcal=(document.getElementById('lowEndKcal').value * document.getElementById('BWkg').value);
+    lowKcal=Math.round((document.getElementById('lowEndKcal').value * ABW));
     document.getElementById('range1').innerHTML = lowKcal;
-
 }
 function calcKcal2()
 {
+    let unit = document.getElementById('lbsOrKg2');
+    let selectedUnit = unit.options[unit.selectedIndex].value;
+    let ABW = document.getElementById('BWkg').value;
+    if(selectedUnit =='lbs')
+    {
+        ABW=parseInt(ABW,10)/2.2;
+        
+    }
     let highKcal;
-    highKcal=(document.getElementById('highEndKcal').value * document.getElementById('BWkg').value);
+    highKcal=Math.round((document.getElementById('highEndKcal').value * ABW));
     document.getElementById('range2').innerHTML = highKcal;
 }
 //Function to show protein g/kg range values
@@ -81,24 +97,40 @@ function showRangeP2(val)
 //Function calculate Protein range
 function calcPro1()
 {
+    let unit = document.getElementById('lbsOrKg2');
+    let selectedUnit = unit.options[unit.selectedIndex].value;
+    let ABW = document.getElementById('BWkg').value;
+    if(selectedUnit =='lbs')
+    {
+        ABW=parseInt(ABW,10)/2.2;
+        
+    }
     let lowPro;
-    lowPro=Math.round((document.getElementById('lowEndPro').value * document.getElementById('BWkg').value));
+    lowPro=Math.round((document.getElementById('lowEndPro').value * ABW));
     document.getElementById('range3').innerHTML = lowPro;
 
 }
 function calcPro2()
 {
+    let unit = document.getElementById('lbsOrKg2');
+    let selectedUnit = unit.options[unit.selectedIndex].value;
+    let ABW = document.getElementById('BWkg').value;
+    if(selectedUnit =='lbs')
+    {
+        ABW=parseInt(ABW,10)/2.2;
+        
+    }
     let highPro;
-    highPro=Math.round((document.getElementById('highEndPro').value * document.getElementById('BWkg').value));
+    highPro=Math.round((document.getElementById('highEndPro').value * ABW));
     document.getElementById('range4').innerHTML = highPro;
 
 }
 //function to change nav color
 function navChangeColor(element)
 {
-    element.style.fontWeight= 'bold';
+    element.style.textShadow= '0px 0px 1px black';
 }
 function navChangeBack(element)
 {
-    element.style.fontWeight = 'normal';
+    element.style.textShadow= '0px 0px 0px black';
 }

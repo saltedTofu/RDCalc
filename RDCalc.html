@@ -6,11 +6,14 @@
         <script src="RDCalc.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
             <div class="logo">
-                <img src="Dietitian Calc.png">
+                <a href="https://dietitiancalc.com">
+                    <img src="Dietitian Calc2.png">
+                </a>
             </div>
             <div class="nav">
                 <h1 id="needs" onmouseover="navChangeColor(this)" onmouseout="navChangeBack(this)">Needs</h1>
@@ -22,7 +25,7 @@
         </header>
         <section class="IBW">
             <h1>Ideal Body Weight Calculator</h1>
-                <span>Gender:</span>
+                <span>Sex:</span>
                 <input id="male" name="gender" type="radio" value="male">
                 <label for="male">Male</label>
                 <input id="female" name="gender" type="radio" value="female">
@@ -54,12 +57,13 @@
         </section>
         <section class="needs">
             <h1>Nutrition Needs Calculator</h1>
-                <label for="BWlbs">Body Weight: lbs </label>
-                <input id="BWlbs" name="BWlbs" type="number">
-                <label for="BWkg">or kg</label>
+                <label for="BWkg">Body Weight:</label>
                 <input id="BWkg" name="BWkg" type="number">
-                <br>
-
+                <select id="lbsOrKg2" name="lbsOrKg2">
+                    <option value="lbs">lbs</option>
+                    <option value="kg">kg</option>
+                </select>
+                <button onclick="calcKcal1(); calcKcal2(); calcPro1();calcPro2()">Calc</button>
                 <h2>Kcal Range</h2>
                 <input id="lowEndKcal" name="lowEndKcal" type="range" min="1" max="50" step="1" oninput="showRange(this.value); calcKcal1()">
                 <label for="lowEndKcal">Kcal/kg</label>

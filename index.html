@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="./RDCalcGridLive.css" type="text/css" rel="stylesheet">
+        <title>Dietitian Calc</title>
+        <link rel="icon" href="Dietitian Calc2.png" type="image/icon type">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <script src="RDCalcGrid.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class = "header">
+                    <a class = "logo" href="./index.html">
+                        <img src="Dietitian Calc2.png">
+                    </a>
+                    <a id="needs" href='./index.html'>Nutrition Needs</a>
+                    <a id="tubeFeeding" href='./tubeFeedGrid.html'>Tube Feeding</a>
+                    <a id="TPN/PPN" href='./TPN.html'>TPN/PPN</a>
+                <div class="donate">
+                </div>
+            </div>
+            <div class = "lside">
+                <h1></h1>
+            </div>
+            <div class = "main">
+                <section class="IBW">
+                    <br>
+                    <h1>Ideal Body Weight Calculator</h1>
+                        <span>Sex:</span>
+                        <input id="male" name="gender" type="radio" value="male" onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'))">
+                        <label for="male">Male</label>
+                        <input id="female" name="gender" type="radio" value="female" onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'))"> 
+                        <label for="female">Female</label>
+                        <br>
+                        <span>Height: </span>
+                        <label for="feet">Feet</label>
+                        <input id="feet" name="feet" type="number">
+                        <label for="inches">Inches: </label>
+                        <input id="inches" name="inches" type="number">
+                        <br> 
+                        <label for="ABWkg">Actual Body Weight</label>
+                        <input id="ABWkg" name="ABWkg" type="number">
+                        <label for="lbsOrKg">lbs or kg?</label>
+                        <select id="lbsOrKg" name="lbsOrKg" onchange="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'))">
+                            <option value="lbs">lbs</option>
+                            <option value="kg">kg</option>
+                        </select>
+                        <button onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'))">Calc</button>
+                        <br>
+                    <div class="output">
+                        <br>
+                        <h3 class = "inline">IBW = </h3>
+                        <h3 class = "inline" id="solution"></h3>
+                        <br>
+                        <h3 class = "inline" id='percentIBW'>%IBW = </h3>
+                        <h3 class = "inline" id="solution2"></h3>
+                    </div>
+                    <br>
+                </section>
+                <section class="needs">
+                    <h1>Nutrition Needs Calculator</h1>
+                        <label for="BWkg">Body Weight:</label>
+                        <input id="BWkg" name="BWkg" type="number">
+                        <select id="lbsOrKg2" name="lbsOrKg2">
+                            <option value="lbs">lbs</option>
+                            <option value="kg">kg</option>
+                        </select>
+                        <button onclick="calcKcal1(); calcKcal2(); calcPro1();calcPro2()">Calc</button>
+                        <br>
+                        <br>
+                        <h3>Kcal Range</h3>
+                        <br>
+                        <input id="lowEndKcal" name="lowEndKcal" type="range" min="1" max="50" step="1" oninput="showRange(this.value); calcKcal1()">
+                        <label for="lowEndKcal">Kcal/kg</label>
+                        <br>
+                        <br>
+                        <p id="textInputLow" >26</p>
+                        <br>
+                        <input id="highEndKcal" name="highEndKcal" type="range" min="1" max="50" step="1" oninput="showRange2(this.value); calcKcal2()">
+                        <label for="highEndKcal">Kcal/kg</label>
+                        <br>
+                        <br>
+                        <p id="textInputHigh">26</p>
+                        <br>
+                        <h3 id="range1" class="inline"></h3> 
+                        <h3 id="kcalDash" class="inline"> - </h3>
+                        <h3 id="range2" class="inline"></h3>
+                        <h3 id = "kcalPerDay" class="inline">kcal/day</h3>
+                        <br>
+                        <br>
+                        <h3>Protein Range</h3>
+                        <br>
+                        <input id="lowEndPro" name="lowEndPro" type="range" min="0.1" max="4.0" step="0.1" oninput="showRangeP(this.value); calcPro1()">
+                        <label for="lowEndPro">Kcal/kg</label>
+                        <br>
+                        <br>
+                        <p id="proInputLow" >2.1</p>
+                        <br>
+                        <input id="highEndPro" name="highEndPro" type="range" min="0.1" max="4.0" step="0.1" oninput="showRangeP2(this.value); calcPro2()">
+                        <label for="highEndPro">Kcal/kg</label>
+                        <br>
+                        <br>
+                        <p id="proInputHigh" >2.1</p>
+                        <br>
+                        <h3 class="inline" id="range3"></h3>
+                        <h3 id = "proteinDash" class="inline"> - </h3> 
+                        <h3 class="inline" id="range4"></h3>
+                        <h3 id = "gramsPerDay" class="inline">g/day</h3>
+                        <br>
+                        <br>
+                </section>
+            </div>
+            <div class = "rside">
+                <h1></h1>
+            </div>
+            <div class = "footer">
+                <h1></h1>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="./RDCalcGridLive.css" type="text/css" rel="stylesheet">
+        <title>Dietitian Calc</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <script src="RDCalcGrid.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class = "header">
+                <a class = "logo" href="./index.html">
+                    <img src="Dietitian Calc2.png">
+                </a>
+                <a id="needs" href='./index.html'>Nutrition Needs</a>
+                <a id="tubeFeeding" href='./tubeFeedGrid.html'>Tube Feeding</a>
+                <a id="TPN/PPN" href='./TPN.html'>TPN/PPN</a>
+            <div class="donate">
+            </div>
+        </div>
+            <div class = "lside">
+                <h1></h1>
+            </div>
+            <div class = "main">
+                <section class = "tubeFeeding" onchange = "calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value); calcBolus(document.getElementById('formula').value, document.getElementById('bolusVolume').value, document.getElementById('times').value)">
+                    <br>
+                    <h1>Tube Feeding Calculator</h1>
+                    <span>Formula</span>
+                    <select id="formula" name="formula">
+                        <option value="Isosource15">Isosource 1.5</option>
+                        <option value="PeptamenAF12">Peptamen AF 1.2</option>
+                        <option value="FibersourceHN">Fibersource HN</option>
+                        <option value="Nutren20">Nutren 2.0</option>
+                        <option value="Replete">Replete</option>
+                        <option value="DiabetisourceAC">Diabetisource AC</option>
+                        <option value="NovasourceRenal">Novasource Renal</option>
+                        <option value="PeptamenIntenseVHP">Peptamen Intense VHP</option>
+                        <option value="VivonexRTF">Vivonex RTF</option>
+                    </select>
+                    <div class = "continuous">
+                        <br>
+                        <h3>Continuous</h3>
+                        <input id="tfRate" name="tfRate" type="range" min="5" max="100" step="5" oninput="showRate(this.value); calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value)">
+                        <br>
+                        <br>
+                        <p class="inline" id="rateOutput" >55</p>
+                        <p class="inline">ml/hr</p>
+                        <p class="inline"> x </p>
+                        <input id="hours" name="hours" type="number" oninput="calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value)">
+                            <label for="hours">hrs/day </label> 
+                        <br>
+                        <p class="inline">Kcal: </p><p id="tfKcal" class="inline">0</p>
+                        <p class="inline">Protein: </p><p id='tfProtein' class="inline">0</p>
+                        <p class="inline">Free Water: </p><p id='tfWater' class="inline">0</p>
+                    </div>
+                    <div class = "bolus">
+                        <br>
+                        <h3>Bolus</h3>
+                        <input id="bolusVolume" name="bolusVolume" type="range" min="5" max="500" step="5" oninput="showVolume(this.value); calcBolus(document.getElementById('formula').value, document.getElementById('bolusVolume').value, document.getElementById('times').value)">
+                        <br>
+                        <br>
+                        <p class = "inline" id="bolusVolumeOutput">255</p>
+                        <p class="inline">ml</p>
+                        <p class="inline"> x </p>
+                        <input id="times" name="times" type="number" oninput="calcBolus(document.getElementById('formula').value, document.getElementById('bolusVolume').value, document.getElementById('times').value)">
+                            <label for="times">bolus/day </label> 
+                        <br>
+                        <p class="inline">Kcal: </p><p id="bolusKcal" class="inline">0</p>
+                        <p class="inline">Protein: </p><p id='bolusProtein' class="inline">0</p>
+                        <p class="inline">Free Water: </p><p id='bolusWater' class="inline">0</p>
+                    </div>
+                </section>
+            </div>
+            <div class = "rside">
+                <h1></h1>
+            </div>
+            <div class = "footer">
+                <h1></h1>
+            </div>
+        </div>
+    </body>
+</html>

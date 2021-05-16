@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="./RDCalcGridLive.css" type="text/css" rel="stylesheet">
+        <title>Dietitian Calc</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <script src="RDCalcGrid.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class = "header">
+                <a class = "logo" href="./index.html">
+                    <img src="Dietitian Calc2.png">
+                </a>
+                <a id="needs" href='./index.html'>Nutrition Needs</a>
+                <a id="tubeFeeding" href='./tubeFeedGrid.html'>Tube Feeding</a>
+                <a id="TPN/PPN" href='./TPN.html'>TPN/PPN</a>
+            <div class="donate">
+            </div>
+        </div>
+            <div class = "lside">
+                <h1></h1>
+            </div>
+            <div class = "main">
+                <section class = "parenteral">
+                    <br>
+                    <h1>PPN/TPN Calculator</h1>
+                    <p class="inline">% Dextrose</p>
+                    <input id="dextroseConcentration" name="dextroseConcentration" type="number" class="inline">
+                    <br>
+                    <p class="inline">% Amino Acid</p>
+                    <input id="aminoAcidConcentration" name="aminoAcidConcentration" type="number" class="inline">
+                    <br>
+                    <br>
+                    <p class="inline">Rate</p>
+                    <input id="pnrate" name="pnrate" type="range" min="5" max="150" step="1" oninput="showPnRate(this.value); steezy(document.getElementById('dextroseConcentration').value,document.getElementById('aminoAcidConcentration').value, this.value, document.getElementById('pnHoursPerDay').value)">
+                    <br>
+                    <br>
+                    <p class="inline" id="pnRateOutput">80</p>
+                    <p class="inline">ml/hr</p>
+                    <p class="inline">x</p>
+                    <input class = "inline" id="pnHoursPerDay" name="pnHoursPerDay" type=number>
+                    <p class="inline">hrs/day</p>
+                    <button onclick = "steezy(document.getElementById('dextroseConcentration').value,document.getElementById('aminoAcidConcentration').value, document.getElementById('pnrate').value, document.getElementById('pnHoursPerDay').value)">Calc</button>
+                    <br>
+                    <p class="inline" id="pnKcal">-</p>
+                    <p class="inline">Kcal</p>
+                    <br>
+                    <p class="inline" id="pnProtein">-</p>
+                    <p class="inline">Protein</p>
+                    <br>
+                    <p class="inline" id="pnTotalVolume">-</p>
+                    <p class="inline">Total Volume</p>
+                    <br>
+                    <br>
+                    <h1>Glucose Infusion Rate</h1>
+                    <label for="ABWkg">Current Body Weight</label>
+                        <input id="CBW" name="CBW" type="number">
+                        <label for="lbsOrKg">lbs or kg?</label>
+                        <select id="lbsOrKg" name="lbsOrKg">
+                            <option value="lbs">lbs</option>
+                            <option value="kg">kg</option>
+                        </select>
+                        <button onclick="girCalc(document.getElementById('dextroseConcentration').value, document.getElementById('pnHoursPerDay').value, document.getElementById('CBW').value, document.getElementById('pnrate').value, document.getElementById('lbsOrKg'))">Calc</button>
+                    <br>
+                    <p class="inline">GIR =</p>
+                    <p class="inline" id="gir"></p>
+                </section>
+            </div>
+            <div class = "rside">
+                <h1></h1>
+            </div>
+            <div class = "footer">
+                <h1></h1>
+            </div>
+        </div>
+    </body>
+</html>

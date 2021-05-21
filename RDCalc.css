@@ -5,7 +5,7 @@
   }
 html{
     color:#00203FFF;
-    background-color:white;
+    background-color:#00203FFF;
     font-size:20px;
     font-family: 'Noto Sans HK', sans-serif;
 }
@@ -28,7 +28,7 @@ html{
 .donate{
     display:block;
     background-color:#00203FFF;
-    width:170px;
+    width:100px;
     height:100px;
 }
 .logo img
@@ -50,23 +50,41 @@ html{
     grid-row: 2/ 12;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    background-color:white;
 }
 .footer{
     grid-column: 1 / span 12;
     grid-row: 12/ span 1;
+    background-color:#00203FFF;
+    color:gray;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    font-size:1rem;
+    font-weight:100;
 }
 .lside{
     grid-column: 1/span 2;
     grid-row: 2/12;
+    display:flex;
+    flex-direction:column;
+    align-content:space-around;
+    text-align:center;
+    border-right: 3px solid #00203FFF;
+    background-color:white;
 }
 .rside{
     grid-column: 11/span 2;
     grid-row: 2/12;
+    border-left: 3px solid #00203FFF;
+    background-color:white;
 }
-
 .IBW, .tubeFeeding, .parenteral, .needs{
     text-align:center;
+    margin-right:50px;
+    margin-left:50px;
+    min-width:500px;
+    
 }
 .output h1{
     display:inline;
@@ -116,7 +134,65 @@ select{
 }
 button{
     background: white;
+    background-color: #00203FFF; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top:10px;
+}
+.otherFactors{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+}
+.amps, .paralyze{
+    text-align:left;
+    margin-left:10px;
+    margin-right:10px;
 }
 .inline{
     display:inline-block;
+}
+.lbsKgConverter{
+    margin-right:50px;
+    margin-left:50px;
+}
+@media only screen and (max-width: 1000px){
+    .header a{
+        font-size: 0.75rem;
+    }
+    .logo img
+    {
+        width:50px;
+        height:auto;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(12, 1 fr);
+        grid-template-rows: 50px repeat(11, 1fr);
+    }
+}
+@media only screen and (min-width:1001px) and (max-width:1500px){
+    .header a{
+        font-size: 1rem;
+    }
+    .logo img
+    {
+        width:75px;
+        height:auto;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(12, 1 fr);
+        grid-template-rows: 75px repeat(11, 1fr);
+    }
 }

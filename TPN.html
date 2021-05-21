@@ -3,6 +3,7 @@
     <head>
         <link href="./RDCalcGridLive.css" type="text/css" rel="stylesheet">
         <title>Dietitian Calc</title>
+        <link rel="icon" href="Dietitian Calc2.png" type="image/icon type">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -21,7 +22,20 @@
             </div>
         </div>
             <div class = "lside">
-                <h1></h1>
+                <section class = "lbsKgConverter">
+                    <br>
+                    <h1>lbs/Kg Converter</h1>
+                    <div id = "convertInput">
+                        <input class = "inline" type="number" id="convertBefore">
+                        <input type="radio" value = "kg" name=convertUnit id="kg" onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">
+                        <label for="kg">kg</label>
+                        <input type="radio" value = "lbs" name=convertUnit id="lbs" onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">
+                        <label for="lbs">lbs</label>
+                    </div>
+                    <button onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">Convert</button>
+                    <br>
+                    <h3 id="convertOutput"></h3>
+                </section>
             </div>
             <div class = "main">
                 <section class = "parenteral">
@@ -43,6 +57,7 @@
                     <p class="inline">x</p>
                     <input class = "inline" id="pnHoursPerDay" name="pnHoursPerDay" type=number>
                     <p class="inline">hrs/day</p>
+                    <br>
                     <button onclick = "steezy(document.getElementById('dextroseConcentration').value,document.getElementById('aminoAcidConcentration').value, document.getElementById('pnrate').value, document.getElementById('pnHoursPerDay').value)">Calc</button>
                     <br>
                     <p class="inline" id="pnKcal">-</p>
@@ -63,17 +78,42 @@
                             <option value="lbs">lbs</option>
                             <option value="kg">kg</option>
                         </select>
+                        <br>
                         <button onclick="girCalc(document.getElementById('dextroseConcentration').value, document.getElementById('pnHoursPerDay').value, document.getElementById('CBW').value, document.getElementById('pnrate').value, document.getElementById('lbsOrKg'))">Calc</button>
                     <br>
                     <p class="inline">GIR =</p>
                     <p class="inline" id="gir"></p>
                 </section>
+                <div class = "empty">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
             </div>
             <div class = "rside">
                 <h1></h1>
             </div>
             <div class = "footer">
-                <h1></h1>
+                <p></p>
+                <p></p>
+                <p>Contact: Tdansby7@gmail.com</p>
             </div>
         </div>
     </body>

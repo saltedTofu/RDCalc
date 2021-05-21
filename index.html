@@ -22,16 +22,28 @@
                 </div>
             </div>
             <div class = "lside">
-                <h1></h1>
+                <section class = "lbsKgConverter">
+                    <br>
+                    <h1>lbs/Kg Converter</h1>
+                    <div id = "convertInput">
+                        <input class = "inline" type="number" id="convertBefore">
+                        <input type="radio" value = "kg" name=convertUnit id="kg" onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">
+                        <label for="kg">kg</label>
+                        <input type="radio" value = "lbs" name=convertUnit id="lbs" onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">
+                        <label for="lbs">lbs</label>
+                    </div>
+                    <button onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">Convert</button>
+                    <br>
+                    <h3 id="convertOutput"></h3>
+                </section>
             </div>
             <div class = "main">
                 <section class="IBW">
                     <br>
                     <h1>Ideal Body Weight Calculator</h1>
-                        <span>Sex:</span>
-                        <input id="male" name="gender" type="radio" value="male" onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'))">
+                        <input id="male" name="gender" type="radio" value="male" onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
                         <label for="male">Male</label>
-                        <input id="female" name="gender" type="radio" value="female" onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'))"> 
+                        <input id="female" name="gender" type="radio" value="female" onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))"> 
                         <label for="female">Female</label>
                         <br>
                         <span>Height: </span>
@@ -43,19 +55,49 @@
                         <label for="ABWkg">Actual Body Weight</label>
                         <input id="ABWkg" name="ABWkg" type="number">
                         <label for="lbsOrKg">lbs or kg?</label>
-                        <select id="lbsOrKg" name="lbsOrKg" onchange="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'))">
+                        <select id="lbsOrKg" name="lbsOrKg" onchange ="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
                             <option value="lbs">lbs</option>
                             <option value="kg">kg</option>
                         </select>
-                        <button onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'))">Calc</button>
+                        <br>
+                        <br>
+                        <div class="otherFactors">
+                            <div class="amps">
+                                <p>Amputations?</p>
+                                <input id = "LBKA" type="checkbox">
+                                <label for="LBKA">L BKA</label>
+                                <br>
+                                <input id = "RBKA" type="checkbox">
+                                <label for="RBKA">R BKA</label>
+                                <br>
+                                <input id = "LAKA" type="checkbox">
+                                <label for="LAKA">L AKA</label>
+                                <br>
+                                <input id = "RAKA" type="checkbox">
+                                <label for="RAKA">R AKA</label>
+                                <br>
+                            </div>
+                            <div class="paralyze">
+                                <p>Paralyzations?</p>
+                                <input id = "para" type="checkbox">
+                                <label for = "para">Paraplegic</label>
+                                <br>
+                                <input id = "quad" type="checkbox">
+                                <label for = "quad">Quadriplegic</label>
+                                <br>
+                            </div>
+                        </div>
+                        <button onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">Calc</button>
                         <br>
                     <div class="output">
-                        <br>
                         <h3 class = "inline">IBW = </h3>
                         <h3 class = "inline" id="solution"></h3>
                         <br>
                         <h3 class = "inline" id='percentIBW'>%IBW = </h3>
                         <h3 class = "inline" id="solution2"></h3>
+                        <br>
+                        <h3 class = "inline" id='BMI'>BMI = </h3>
+                        <h3 class = "inline" id='BMIOutput'></h3>
                     </div>
                     <br>
                 </section>
@@ -67,9 +109,8 @@
                             <option value="lbs">lbs</option>
                             <option value="kg">kg</option>
                         </select>
+                        <br>
                         <button onclick="calcKcal1(); calcKcal2(); calcPro1();calcPro2()">Calc</button>
-                        <br>
-                        <br>
                         <h3>Kcal Range</h3>
                         <br>
                         <input id="lowEndKcal" name="lowEndKcal" type="range" min="1" max="50" step="1" oninput="showRange(this.value); calcKcal1()">
@@ -116,7 +157,9 @@
                 <h1></h1>
             </div>
             <div class = "footer">
-                <h1></h1>
+                <p></p>
+                <p></p>
+                <p>Contact: Tdansby7@gmail.com</p>
             </div>
         </div>
     </body>

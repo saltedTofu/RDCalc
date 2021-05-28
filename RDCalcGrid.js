@@ -547,18 +547,18 @@ function calcContinuous(formula,rate,hoursPerDay)
     TFformula=formula;
     let totalVolume = rate * hoursPerDay;
     calcTF(totalVolume);
-    document.getElementById('tfKcal').innerHTML = kcal;
-    document.getElementById('tfProtein').innerHTML = protein;
-    document.getElementById('tfWater').innerHTML = water;
+    document.getElementById('tfKcal').innerHTML = kcal + ' kcal';
+    document.getElementById('tfProtein').innerHTML = protein + 'g Protein';
+    document.getElementById('tfWater').innerHTML = water + 'ml Free Water';
 }
 function calcBolus(formula,volume,bolusPerDay)
 {
     TFformula=formula;
     let totalVolume = volume * bolusPerDay;
     calcTF(totalVolume);
-    document.getElementById('bolusKcal').innerHTML = kcal;
-    document.getElementById('bolusProtein').innerHTML = protein;
-    document.getElementById('bolusWater').innerHTML = water;
+    document.getElementById('bolusKcal').innerHTML = kcal + ' kcal';
+    document.getElementById('bolusProtein').innerHTML =  protein + 'g Protein';
+    document.getElementById('bolusWater').innerHTML =  water + 'ml Free Water';
 }
 function showVolume(val)
 {
@@ -597,7 +597,7 @@ function girCalc(dextroseConcentration,hoursPerDay,weight,pnRate,unit)
     }
     let totalVolume = pnRate * hoursPerDay;
     let gir = (pnRate*dextroseConcentration*1000)/(weight*60*100);
-    document.getElementById('gir').innerHTML = Math.round(gir*10)/10;
+    document.getElementById('gir').innerHTML = Math.round(gir*10)/10 + ' mg/kg/min';
 }
 function convert(kg, lbs){
     let inputValue = document.getElementById('convertBefore').value;

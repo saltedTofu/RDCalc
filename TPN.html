@@ -3,7 +3,7 @@
     <head>
         <link href="./RDCalcGridLive.css" type="text/css" rel="stylesheet">
         <title>Dietitian Calc</title>
-        <link rel="icon" href="Dietitian Calc2.png" type="image/icon type">
+        <link rel="icon" href="DCLogo.png" type="image/icon type">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
         <div class="container">
             <div class = "header">
                 <a class = "logo" href="./index.html">
-                    <img src="Dietitian Calc2.png">
+                    <img src="DCLogo.png">
                 </a>
                 <a id="needs" href='./index.html'>Nutrition Needs</a>
                 <a id="tubeFeeding" href='./tubeFeedGrid.html'>Tube Feeding</a>
@@ -22,20 +22,6 @@
             </div>
         </div>
             <div class = "lside">
-                <section class = "lbsKgConverter">
-                    <br>
-                    <h1>lbs/Kg Converter</h1>
-                    <div id = "convertInput">
-                        <input class = "inline" type="number" id="convertBefore">
-                        <input type="radio" value = "kg" name=convertUnit id="kg" onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">
-                        <label for="kg">kg</label>
-                        <input type="radio" value = "lbs" name=convertUnit id="lbs" onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">
-                        <label for="lbs">lbs</label>
-                    </div>
-                    <button onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">Convert</button>
-                    <br>
-                    <h3 id="convertOutput"></h3>
-                </section>
             </div>
             <div class = "main">
                 <section class = "parenteral">
@@ -52,7 +38,7 @@
                     <input id="pnrate" name="pnrate" type="range" min="5" max="150" step="1" oninput="showPnRate(this.value); steezy(document.getElementById('dextroseConcentration').value,document.getElementById('aminoAcidConcentration').value, this.value, document.getElementById('pnHoursPerDay').value)">
                     <br>
                     <br>
-                    <p class="inline" id="pnRateOutput">80</p>
+                    <p class="inline" id="pnRateOutput">78</p>
                     <p class="inline">ml/hr</p>
                     <p class="inline">x</p>
                     <input class = "inline" id="pnHoursPerDay" name="pnHoursPerDay" type=number>
@@ -83,29 +69,9 @@
                     <br>
                     <p class="inline">GIR =</p>
                     <p class="inline" id="gir"></p>
+                    <br>
+                    <br>
                 </section>
-                <div class = "empty">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                </div>
             </div>
             <div class = "rside">
                 <h1></h1>

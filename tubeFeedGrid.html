@@ -3,7 +3,7 @@
     <head>
         <link href="./RDCalcGridLive.css" type="text/css" rel="stylesheet">
         <title>Dietitian Calc</title>
-        <link rel="icon" href="Dietitian Calc2.png" type="image/icon type">
+        <link rel="icon" href="DCLogo.png" type="image/icon type">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
         <div class="container">
             <div class = "header">
                 <a class = "logo" href="./index.html">
-                    <img src="Dietitian Calc2.png">
+                    <img src="DCLogo.png">
                 </a>
                 <a id="needs" href='./index.html'>Nutrition Needs</a>
                 <a id="tubeFeeding" href='./tubeFeedGrid.html'>Tube Feeding</a>
@@ -22,20 +22,6 @@
             </div>
         </div>
             <div class = "lside">
-                <section class = "lbsKgConverter">
-                    <br>
-                    <h1>lbs/Kg Converter</h1>
-                    <div id = "convertInput">
-                        <input class = "inline" type="number" id="convertBefore">
-                        <input type="radio" value = "kg" name=convertUnit id="kg" onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">
-                        <label for="kg">kg</label>
-                        <input type="radio" value = "lbs" name=convertUnit id="lbs" onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">
-                        <label for="lbs">lbs</label>
-                    </div>
-                    <button onclick="convert(document.getElementById('kg'), document.getElementById('lbs'))">Convert</button>
-                    <br>
-                    <h3 id="convertOutput"></h3>
-                </section>
             </div>
             <div class = "main">
                 <section class = "tubeFeeding" onchange = "calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value); calcBolus(document.getElementById('formula').value, document.getElementById('bolusVolume').value, document.getElementById('times').value)">
@@ -43,46 +29,46 @@
                     <h1>Tube Feeding Calculator</h1>
                     <span>Formula</span>
                     <select id="formula" name="formula">
-                        <option value="DiabetisourceAC">Diabetisource AC</option>
-                        <option value="FibersourceHN">Fibersource HN</option>
+                        <option value= "Compleat">Compleat</option>
+                        <option value= "DiabetisourceAC">Diabetisource AC</option>
+                        <option value= "FibersourceHN">Fibersource HN</option>
                         <option value= "Glucerna10">Glucerna 1.0</option>
                         <option value= "Glucerna12">Glucerna 1.2</option>
                         <option value= "Glucerna15">Glucerna 1.5</option>
-                        <option value="Isosource15">Isosource 1.5</option>
+                        <option value= "Glytrol">Glytrol</option>
+                        <option value= "Impact">Impact</option>
+                        <option value= "ImpactPeptide15">Impact Peptide 1.5</option>
+                        <option value= "Isosource15">Isosource 1.5</option>
+                        <option value= "IsosourceHN">Isosource HN</option>
                         <option value= "Jevity10">Jevity 1.0</option>
                         <option value= "Jevity12">Jevity 1.2</option>
                         <option value= "Jevity15">Jevity 1.5</option>
                         <option value= "Nepro">Nepro</option>
-                        <option value="NovasourceRenal">Novasource Renal</option>
+                        <option value= "NovasourceRenal">Novasource Renal</option>
+                        <option value= "Nutren10">Nutren 1.0</option>
+                        <option value= "Nutren10WithFiber">Nutren 1.0 With Fiber</option>
+                        <option value= "Nutren15">Nutren 1.5</option>
+                        <option value= "Nutren20">Nutren 2.0</option>
                         <option value= "Osmolite10">Osmolite 1.0</option>
                         <option value= "Osmolite12">Osmolite 1.2</option>
                         <option value= "Osmolite15">Osmolite 1.5</option>
+                        <option value= "Peptamen">Peptamen</option>
+                        <option value= "PeptamenAF12">Peptamen AF 1.2</option>
+                        <option value= "Peptamen15">Peptamen 1.5</option>
+                        <option value= "PeptamenIntenseVHP">Peptamen Intense VHP</option>
                         <option value= "Pivot15">Pivot 1.5</option>
                         <option value= "Promote">Promote</option>
                         <option value= "PromoteWithFiber">Promote With Fiber</option>
                         <option value= "Pulmocare">Pulmocare</option>
+                        <option value= "Renalcal">Renalcal</option>
+                        <option value= "Replete">Replete</option>
                         <option value= "Suplena">Suplena</option>
                         <option value= "TwoCalHN">TwoCal HN</option>
                         <option value= "Vital10">Vital 1.0</option>
                         <option value= "VitalAF12">Vital AF 1.2</option>
                         <option value= "Vital15">Vital 1.5</option>
                         <option value= "VitalHighProtein">Vital High Protein</option>
-                        <option value= "Compleat">Compleat</option>
-                        <option value= "Glytrol">Glytrol</option>
-                        <option value= "Impact">Impact</option>
-                        <option value= "ImpactPeptide15">Impact Peptide 1.5</option>
-                        <option value= "IsosourceHN">Isosource HN</option>
-                        <option value= "Nutren10">Nutren 1.0</option>
-                        <option value= "Nutren10WithFiber">Nutren 1.0 With Fiber</option>
-                        <option value= "Nutren15">Nutren 1.5</option>
-                        <option value="Nutren20">Nutren 2.0</option>
-                        <option value= "Peptamen">Peptamen</option>
-                        <option value="PeptamenAF12">Peptamen AF 1.2</option>
-                        <option value= "Peptamen15">Peptamen 1.5</option>
-                        <option value="PeptamenIntenseVHP">Peptamen Intense VHP</option>
-                        <option value= "Renalcal">Renalcal</option>
-                        <option value="Replete">Replete</option>
-                        <option value="VivonexRTF">Vivonex RTF</option>
+                        <option value= "VivonexRTF">Vivonex RTF</option> 
                     </select>
                     <div class = "continuous">
                         <br>
@@ -96,51 +82,35 @@
                         <input id="hours" name="hours" type="number" oninput="calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value)">
                             <label for="hours">hrs/day </label> 
                         <br>
-                        <p class="inline">Kcal: </p><p id="tfKcal" class="inline">0</p>
-                        <p class="inline">Protein: </p><p id='tfProtein' class="inline">0</p>
-                        <p class="inline">Free Water: </p><p id='tfWater' class="inline">0</p>
+                        <br>
+                        <p id="tfKcal" class="inline">- Kcal</p>
+                        <br>
+                        <p id='tfProtein' class="inline">- Protein</p>
+                        <br>
+                        <p id='tfWater' class="inline">- Free Water</p>
+                        <br>
                     </div>
                     <div class = "bolus">
                         <br>
                         <h3>Bolus</h3>
-                        <input id="bolusVolume" name="bolusVolume" type="range" min="5" max="500" step="5" oninput="showVolume(this.value); calcBolus(document.getElementById('formula').value, document.getElementById('bolusVolume').value, document.getElementById('times').value)">
+                        <input id="bolusVolume" name="bolusVolume" type="range" min="5" max="500" step="1" oninput="showVolume(this.value); calcBolus(document.getElementById('formula').value, document.getElementById('bolusVolume').value, document.getElementById('times').value)">
                         <br>
                         <br>
-                        <p class = "inline" id="bolusVolumeOutput">255</p>
+                        <p class = "inline" id="bolusVolumeOutput">253</p>
                         <p class="inline">ml</p>
                         <p class="inline"> x </p>
                         <input id="times" name="times" type="number" oninput="calcBolus(document.getElementById('formula').value, document.getElementById('bolusVolume').value, document.getElementById('times').value)">
                             <label for="times">bolus/day </label> 
                         <br>
-                        <p class="inline">Kcal: </p><p id="bolusKcal" class="inline">0</p>
-                        <p class="inline">Protein: </p><p id='bolusProtein' class="inline">0</p>
-                        <p class="inline">Free Water: </p><p id='bolusWater' class="inline">0</p>
-                    </div>
-                    <div class = "empty">
                         <br>
+                        <p id="bolusKcal" class="inline">- Kcal</p>
                         <br>
+                        <p id='bolusProtein' class="inline">- Protein</p>
                         <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <p id='bolusWater' class="inline">- Free Water</p>
                         <br>
                     </div>
+                    <br>
                 </section>
             </div>
             <div class = "rside">

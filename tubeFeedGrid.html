@@ -21,8 +21,6 @@
             <div class="donate">
             </div>
         </div>
-            <div class = "lside">
-            </div>
             <div class = "main">
                 <section class = "tubeFeeding" onchange = "calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value); calcBolus(document.getElementById('formula').value, document.getElementById('bolusVolume').value, document.getElementById('times').value)">
                     <br>
@@ -43,6 +41,10 @@
                         <option value= "Jevity10">Jevity 1.0</option>
                         <option value= "Jevity12">Jevity 1.2</option>
                         <option value= "Jevity15">Jevity 1.5</option>
+                        <option value= "KateFarmsStandard10">Kate Farms Standard 1.0</option>
+                        <option value= "KateFarmsStandard14">Kate Farms Standard 1.4</option>
+                        <option value= "KateFarmsPeptide10">Kate Farms Peptide 1.0</option>
+                        <option value= "KateFarmsPeptide15">Kate Farms Peptide 1.5</option>
                         <option value= "Nepro">Nepro</option>
                         <option value= "NovasourceRenal">Novasource Renal</option>
                         <option value= "Nutren10">Nutren 1.0</option>
@@ -73,48 +75,49 @@
                     <div class = "continuous">
                         <br>
                         <h3>Continuous</h3>
-                        <input id="tfRate" name="tfRate" type="range" min="5" max="100" step="5" oninput="showRate(this.value); calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value)">
+                        <input id="tfRate" name="tfRate" type="range" min="5" max="100" step="1" oninput="showRate(this.value); calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value)">
                         <br>
                         <br>
-                        <p class="inline" id="rateOutput" >55</p>
+                        <input id=rateOutput name=rateOutput type="number" oninput="changeRateSlider(this.value); calcContinuous(document.getElementById('formula').value, this.value, document.getElementById('hours').value)">
                         <p class="inline">ml/hr</p>
                         <p class="inline"> x </p>
                         <input id="hours" name="hours" type="number" oninput="calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value)">
                             <label for="hours">hrs/day </label> 
                         <br>
                         <br>
-                        <p id="tfKcal" class="inline">- Kcal</p>
-                        <br>
-                        <p id='tfProtein' class="inline">- Protein</p>
-                        <br>
-                        <p id='tfWater' class="inline">- Free Water</p>
+                        <div class="calcOutput">
+                            <p id="tfKcal" class="inline">0 Kcal</p>
+                            <br>
+                            <p id='tfProtein' class="inline">0 g Protein</p>
+                            <br>
+                            <p id='tfWater' class="inline">0 ml Free Water</p>
+                        </div>
                         <br>
                     </div>
                     <div class = "bolus">
                         <br>
                         <h3>Bolus</h3>
-                        <input id="bolusVolume" name="bolusVolume" type="range" min="5" max="500" step="1" oninput="showVolume(this.value); calcBolus(document.getElementById('formula').value, document.getElementById('bolusVolume').value, document.getElementById('times').value)">
+                        <input id="bolusVolume" name="bolusVolume" type="range" min="5" max="500" step="1" oninput="showVolume(this.value); calcBolus(document.getElementById('formula').value, this.value, document.getElementById('times').value)">
                         <br>
                         <br>
-                        <p class = "inline" id="bolusVolumeOutput">253</p>
+                        <input id="bolusVolumeOutput" name="bolusVolumeOutput" type="number" oninput="changeRateSliderBolus(this.value); calcBolus(document.getElementById('formula').value, document.getElementById('bolusVolume').value, document.getElementById('times').value)">
                         <p class="inline">ml</p>
                         <p class="inline"> x </p>
                         <input id="times" name="times" type="number" oninput="calcBolus(document.getElementById('formula').value, document.getElementById('bolusVolume').value, document.getElementById('times').value)">
                             <label for="times">bolus/day </label> 
                         <br>
                         <br>
-                        <p id="bolusKcal" class="inline">- Kcal</p>
-                        <br>
-                        <p id='bolusProtein' class="inline">- Protein</p>
-                        <br>
-                        <p id='bolusWater' class="inline">- Free Water</p>
+                        <div class="calcOutput">
+                            <p id="bolusKcal" class="inline">0 Kcal</p>
+                            <br>
+                            <p id='bolusProtein' class="inline">0 g Protein</p>
+                            <br>
+                            <p id='bolusWater' class="inline">0 ml Free Water</p>
+                        </div>
                         <br>
                     </div>
                     <br>
                 </section>
-            </div>
-            <div class = "rside">
-                <h1></h1>
             </div>
             <div class = "footer">
                 <p></p>

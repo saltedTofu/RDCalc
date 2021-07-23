@@ -46,6 +46,7 @@ function calcIdealWeight(inchInput,feetInput,male,female,ABW,unit,LBKA,RBKA,LAKA
     {
         IBW = 'Select a gender';
         document.getElementById('solution').innerHTML=IBW;
+        return;
     }
     let otherFactors=0;
     if(LBKA.checked)
@@ -92,7 +93,7 @@ function calcIdealWeight(inchInput,feetInput,male,female,ABW,unit,LBKA,RBKA,LAKA
     if(isNaN(percentIBW))
     {
         document.getElementById('solution2').innerHTML='Enter Actual Body Weight';
-        document.getElementById('BMIOutput').innerHTML = BMI;  
+        document.getElementById('BMIOutput').innerHTML = 'Enter Actual Body Weight';  
         return;
     }
     if(isNaN(BMI))
@@ -295,12 +296,40 @@ let NovasourceRenal = new tubeFeed (2000,90.7,720);
 let PeptamenAF12 = new tubeFeed(1200,76,810);
 let PeptamenIntenseVHP = new tubeFeed(1000,92,840);
 let VivonexRTF = new tubeFeed(1000,50,850);
+let KateFarmsStandard10 = new tubeFeed(1000,49.2,800);
+let KateFarmsStandard14 = new tubeFeed(1400,61.5,720);
+let KateFarmsPeptide10 = new tubeFeed(1000,49.2,790);
+let KateFarmsPeptide15 = new tubeFeed(1538,73.8,700);
 let kcal;
 let protein;
 let water;
 let TFformula;
 function calcTF(totalVolume)
 {
+    if(TFformula =='KateFarmsPeptide15')
+    {
+        kcal = Math.round(totalVolume*(KateFarmsPeptide15.kcal/1000));
+        protein = Math.round(totalVolume*(KateFarmsPeptide15.protein/1000));
+        water = Math.round(totalVolume*(KateFarmsPeptide15.water/1000));
+    }
+    if(TFformula =='KateFarmsPeptide10')
+    {
+        kcal = Math.round(totalVolume*(KateFarmsPeptide10.kcal/1000));
+        protein = Math.round(totalVolume*(KateFarmsPeptide10.protein/1000));
+        water = Math.round(totalVolume*(KateFarmsPeptide10.water/1000));
+    }
+    if(TFformula =='KateFarmsStandard14')
+    {
+        kcal = Math.round(totalVolume*(KateFarmsStandard14.kcal/1000));
+        protein = Math.round(totalVolume*(KateFarmsStandard14.protein/1000));
+        water = Math.round(totalVolume*(KateFarmsStandard14.water/1000));
+    }
+    if(TFformula =='KateFarmsStandard10')
+    {
+        kcal = Math.round(totalVolume*(KateFarmsStandard10.kcal/1000));
+        protein = Math.round(totalVolume*(KateFarmsStandard10.protein/1000));
+        water = Math.round(totalVolume*(KateFarmsStandard10.water/1000));
+    }
     if(TFformula =='Isosource15')
     {
         kcal = Math.round(totalVolume*(Isosource15.kcal/1000));
@@ -547,7 +576,7 @@ function calcContinuous(formula,rate,hoursPerDay)
     TFformula=formula;
     let totalVolume = rate * hoursPerDay;
     calcTF(totalVolume);
-    document.getElementById('tfKcal').innerHTML = kcal + ' kcal';
+    document.getElementById('tfKcal').innerHTML = kcal + ' Kcal';
     document.getElementById('tfProtein').innerHTML = protein + 'g Protein';
     document.getElementById('tfWater').innerHTML = water + 'ml Free Water';
 }
@@ -556,17 +585,25 @@ function calcBolus(formula,volume,bolusPerDay)
     TFformula=formula;
     let totalVolume = volume * bolusPerDay;
     calcTF(totalVolume);
-    document.getElementById('bolusKcal').innerHTML = kcal + ' kcal';
+    document.getElementById('bolusKcal').innerHTML = kcal + ' Kcal';
     document.getElementById('bolusProtein').innerHTML =  protein + 'g Protein';
     document.getElementById('bolusWater').innerHTML =  water + 'ml Free Water';
 }
 function showVolume(val)
 {
-    document.getElementById('bolusVolumeOutput').innerHTML=val;
+    document.getElementById('bolusVolumeOutput').value=val;
 }
 function showRate(val)
 {
-    document.getElementById('rateOutput').innerHTML=val;
+    document.getElementById('rateOutput').value=val;
+}
+function changeRateSlider(val)
+{
+    document.getElementById('tfRate').value=val
+}
+function changeRateSliderBolus(val)
+{
+    document.getElementById('bolusVolume').value=val;
 }
 //function to calculate TPN/PPN named by Shirley
 function steezy(dextroseConcentration, aminoAcidConcentration, pnRate, hoursPerDay)
@@ -580,7 +617,11 @@ function steezy(dextroseConcentration, aminoAcidConcentration, pnRate, hoursPerD
 }
 function showPnRate(val)
 {
-    document.getElementById('pnRateOutput').innerHTML=val;
+    document.getElementById('pnRateOutput').value=val;
+}
+function changePnRateSlider(val)
+{
+    document.getElementById('pnrate').value=val;
 }
 function girCalc(dextroseConcentration,hoursPerDay,weight,pnRate,unit)
 {
@@ -626,4 +667,11 @@ function convert(kg, lbs){
         return;
     }
 }
-convert();
+/*
+make main div flex
+allowed typing tf/tpn rates
+styled TPN and TF outputs
+bug fixes on IBW calculator
+
+*/
+

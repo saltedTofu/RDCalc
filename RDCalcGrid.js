@@ -612,8 +612,10 @@ function steezy(dextroseConcentration, aminoAcidConcentration, pnRate, hoursPerD
     let gramsDextrose = (dextroseConcentration/100)*totalVolume;
     let gramsAminoAcid = (aminoAcidConcentration/100)*totalVolume;
     document.getElementById('pnKcal').innerHTML = Math.round((gramsDextrose*3.4) + (gramsAminoAcid*4));
+    document.getElementById('pnDextrose').innerHTML = Math.round(gramsDextrose);
     document.getElementById('pnProtein').innerHTML = Math.round(gramsAminoAcid);
     document.getElementById('pnTotalVolume').innerHTML = Math.round(totalVolume);
+    
 }
 function showPnRate(val)
 {

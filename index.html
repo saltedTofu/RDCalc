@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <script src="RDCalcGrid.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <div class="container">
@@ -21,70 +22,68 @@
                 <div class="donate">
                 </div>
             </div>
-            <div class = "lside">
-            </div>
             <div class = "main">
-                <div class = "IBWandConverterParent">
+                <div class="IBWAndConverterParent">
                     <section class="IBW">
-                        <br>
-                        <h1>Ideal Body Weight Calculator</h1>
-                            <input id="male" name="gender" type="radio" value="male" onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
-                            <label for="male">Male</label>
-                            <input id="female" name="gender" type="radio" value="female" onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))"> 
-                            <label for="female">Female</label>
                             <br>
-                            <span>Height: </span>
-                            <label for="feet">Feet</label>
-                            <input id="feet" name="feet" type="number">
-                            <label for="inches">Inches: </label>
-                            <input id="inches" name="inches" type="number">
-                            <br> 
-                            <label for="ABWkg">Actual Body Weight</label>
-                            <input id="ABWkg" name="ABWkg" type="number">
-                            <label for="lbsOrKg">lbs or kg?</label>
-                            <select id="lbsOrKg" name="lbsOrKg" onchange ="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
-                                <option value="lbs">lbs</option>
-                                <option value="kg">kg</option>
-                            </select>
-                            <br>
-                            <br>
-                            <div class="otherFactors">
-                                <div class="amps">
-                                    <p>Amputations?</p>
-                                    <input id = "LBKA" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
-                                    <label for="LBKA">L BKA</label>
-                                    <br>
-                                    <input id = "RBKA" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
-                                    <label for="RBKA">R BKA</label>
-                                    <br>
-                                    <input id = "LAKA" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
-                                    <label for="LAKA">L AKA</label>
-                                    <br>
-                                    <input id = "RAKA" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
-                                    <label for="RAKA">R AKA</label>
-                                    <br>
+                            <h1>Ideal Body Weight Calculator</h1>
+                                <input id="male" name="gender" type="radio" value="male" onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
+                                <label for="male">Male</label>
+                                <input id="female" name="gender" type="radio" value="female" onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))"> 
+                                <label for="female">Female</label>
+                                <br>
+                                <span>Height: </span>
+                                <label for="feet">Feet</label>
+                                <input id="feet" name="feet" type="number">
+                                <label for="inches">Inches: </label>
+                                <input id="inches" name="inches" type="number">
+                                <br> 
+                                <label for="ABWkg">Actual Body Weight</label>
+                                <input id="ABWkg" name="ABWkg" type="number">
+                                <label for="lbsOrKg">lbs or kg?</label>
+                                <select id="lbsOrKg" name="lbsOrKg" onchange ="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
+                                    <option value="lbs">lbs</option>
+                                    <option value="kg">kg</option>
+                                </select>
+                                <br>
+                                <br>
+                                <div class="otherFactors">
+                                    <div class="amps">
+                                        <p>Amputations?</p>
+                                        <input id = "LBKA" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
+                                        <label for="LBKA">L BKA (5.9%)</label>
+                                        <br>
+                                        <input id = "RBKA" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
+                                        <label for="RBKA">R BKA (5.9%)</label>
+                                        <br>
+                                        <input id = "LAKA" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
+                                        <label for="LAKA">L AKA (16%)</label>
+                                        <br>
+                                        <input id = "RAKA" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
+                                        <label for="RAKA">R AKA (16%)</label>
+                                        <br>
+                                    </div>
+                                    <div class="paralyze">
+                                        <p>Paralyzations?</p>
+                                        <input id = "para" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
+                                        <label for = "para">Paraplegic (12.5%)</label>
+                                        <br>
+                                        <input id = "quad" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
+                                        <label for = "quad">Quadriplegic (17.5%)</label>
+                                        <br>
+                                    </div>
                                 </div>
-                                <div class="paralyze">
-                                    <p>Paralyzations?</p>
-                                    <input id = "para" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
-                                    <label for = "para">Paraplegic</label>
-                                    <br>
-                                    <input id = "quad" type="checkbox" onchange = "calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">
-                                    <label for = "quad">Quadriplegic</label>
-                                    <br>
-                                </div>
-                            </div>
-                            <button onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">Calc</button>
+                                <button onclick="calcIdealWeight(document.getElementById('inches').value, document.getElementById('feet').value, document.getElementById('male'), document.getElementById('female'), document.getElementById('ABWkg').value, document.getElementById('lbsOrKg'),document.getElementById('LBKA'), document.getElementById('RBKA'), document.getElementById('LAKA'), document.getElementById('RAKA'), document.getElementById('para'), document.getElementById('quad'))">Calc</button>
+                                <br>
+                                <h3 class = "inline">IBW = </h3>
+                                <h3 class = "inline" id="solution"></h3>
+                                <br>
+                                <h3 class = "inline" id='percentIBW'>%IBW = </h3>
+                                <h3 class = "inline" id="solution2"></h3>
+                                <br>
+                                <h3 class = "inline" id='BMI'>BMI = </h3>
+                                <h3 class = "inline" id='BMIOutput'></h3>
                             <br>
-                            <h3 class = "inline">IBW = </h3>
-                            <h3 class = "inline" id="solution"></h3>
-                            <br>
-                            <h3 class = "inline" id='percentIBW'>%IBW = </h3>
-                            <h3 class = "inline" id="solution2"></h3>
-                            <br>
-                            <h3 class = "inline" id='BMI'>BMI = </h3>
-                            <h3 class = "inline" id='BMIOutput'></h3>
-                        <br>
                     </section>
                     <section class = "lbsKgConverter">
                         <br>
@@ -100,8 +99,8 @@
                         <br>
                             <h3 id="convertOutput"></h3>
                         <br>
-                    </section>
-                </div>        
+                    </section> 
+                </div>
                 <section class="needs">
                     <br>
                     <h1>Nutrition Needs Calculator</h1>
@@ -153,10 +152,8 @@
                         <h3 id = "gramsPerDay" class="inline">g/day</h3>
                         <br>
                         <br>
-                </section>   
-                <br>
-            </div>
-            <div class = "rside">
+                </section> 
+                
             </div>
             <div class = "footer">
                 <p></p>

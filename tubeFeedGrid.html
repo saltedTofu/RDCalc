@@ -72,6 +72,19 @@
                         <option value= "VitalHighProtein">Vital High Protein</option>
                         <option value= "VivonexRTF">Vivonex RTF</option> 
                     </select>
+                    <br>
+                    <span>Modular</span>
+                    <select id="modular" name="modular">
+                        <option value= "none">None</option>
+                        <option value= "beneprotein">Beneprotein</option>
+                        <option value= "juven">Juven</option>
+                    </select>
+                    <br>
+                    <span>Water Flush</span>
+                    <input type="number" id="waterFlushAmount" name="waterFlushAmount">
+                    <span>ml every</span>
+                    <input type="number" id="waterFlushFrequency" name="waterFlushFrequency">
+                    <span>hours</span>
                     <div class = "continuous">
                         <br>
                         <h3>Continuous</h3>
@@ -88,9 +101,9 @@
                         <div class="calcOutput">
                             <p id="tfKcal" class="inline">0 Kcal</p>
                             <br>
-                            <p id='tfProtein' class="inline">0 g Protein</p>
+                            <p id='tfProtein' class="inline">0g Protein</p>
                             <br>
-                            <p id='tfWater' class="inline">0 ml Free Water</p>
+                            <p id='tfWater' class="inline">0ml Free Water</p>
                         </div>
                         <br>
                     </div>
@@ -110,9 +123,9 @@
                         <div class="calcOutput">
                             <p id="bolusKcal" class="inline">0 Kcal</p>
                             <br>
-                            <p id='bolusProtein' class="inline">0 g Protein</p>
+                            <p id='bolusProtein' class="inline">0g Protein</p>
                             <br>
-                            <p id='bolusWater' class="inline">0 ml Free Water</p>
+                            <p id='bolusWater' class="inline">0ml Free Water</p>
                         </div>
                         <br>
                     </div>

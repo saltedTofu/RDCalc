@@ -1,5 +1,54 @@
-//Functions for calculating IBW/%IBW
+//global variables
+let FibersourceHN = new tubeFeed(1200,54,810);
+let Glucerna10 = new tubeFeed(1000,41.8,853);
+let Glucerna12 = new tubeFeed(1200,60,805);
+let Glucerna15 = new tubeFeed(1500,82.5,759);
+let Jevity10 = new tubeFeed(1060,44.3,835);
+let Jevity12 = new tubeFeed(1200,55.5,807);
+let Jevity15 = new tubeFeed(1500,63.8,760);
+let Nepro = new tubeFeed(1770,81,727);
+let Osmolite10 = new tubeFeed(1060,44.3,835);
+let Osmolite12 = new tubeFeed(1200,55.5,820);
+let Osmolite15 = new tubeFeed(1500,62.7,762);
+let Pivot15 = new tubeFeed(1500,93.8,750);
+let Promote = new tubeFeed(1000,62.5,839);
+let PromoteWithFiber = new tubeFeed(1000,62.5,831);
+let Pulmocare = new tubeFeed(1500,62.6,785);
+let Suplena = new tubeFeed(1800,44.7,725.7);
+let TwoCalHN = new tubeFeed(2000,83.5,700);
+let Vital10 = new tubeFeed(1000,40,834);
+let VitalAF12 = new tubeFeed(1200,75,811);
+let Vital15 = new tubeFeed(1500,67.5,764);
+let VitalHighProtein = new tubeFeed(1000,87.3,836);
+let Compleat = new tubeFeed(1060,48,828);
+let Glytrol = new tubeFeed(1000,45.2,840);
+let Impact = new tubeFeed(1000,56,852);
+let ImpactPeptide15 = new tubeFeed(1500,94,770);
+let IsosourceHN = new tubeFeed(1200,54,808);
+let Nutren10 = new tubeFeed(1000,40,844);
+let Nutren10WithFiber = new tubeFeed(1000,40,848);
+let Nutren15 = new tubeFeed(1500,68,764);
+let Peptamen = new tubeFeed(1000,40,848);
+let Peptamen15 = new tubeFeed(1500,68,772);
+let Renalcal = new tubeFeed(1000,34,704);
+let Replete = new tubeFeed(1000,64,840);
+let Isosource15 = new tubeFeed(1500,68,760);
+let Nutren20 = new tubeFeed(2000,84,690);
+let DiabetisourceAC = new tubeFeed (1200,60,820);
+let NovasourceRenal = new tubeFeed (2000,90.7,720);
+let PeptamenAF12 = new tubeFeed(1200,76,810);
+let PeptamenIntenseVHP = new tubeFeed(1000,92,840);
+let VivonexRTF = new tubeFeed(1000,50,850);
+let KateFarmsStandard10 = new tubeFeed(1000,49.2,800);
+let KateFarmsStandard14 = new tubeFeed(1400,61.5,720);
+let KateFarmsPeptide10 = new tubeFeed(1000,49.2,790);
+let KateFarmsPeptide15 = new tubeFeed(1538,73.8,700);
+let kcal;
+let protein;
+let water;
+let TFformula;
 
+//Functions for calculating IBW/%IBW
 function calcIdealWeight(inchInput,feetInput,male,female,ABW,unit,LBKA,RBKA,LAKA,RAKA,para,quad)
 {
     let heightInInches;
@@ -256,54 +305,6 @@ class tubeFeed{
         return this._water;
     }
 }
-let FibersourceHN = new tubeFeed(1200,54,810);
-let Glucerna10 = new tubeFeed(1000,41.8,853);
-let Glucerna12 = new tubeFeed(1200,60,805);
-let Glucerna15 = new tubeFeed(1500,82.5,759);
-let Jevity10 = new tubeFeed(1060,44.3,835);
-let Jevity12 = new tubeFeed(1200,55.5,807);
-let Jevity15 = new tubeFeed(1500,63.8,760);
-let Nepro = new tubeFeed(1770,81,727);
-let Osmolite10 = new tubeFeed(1060,44.3,835);
-let Osmolite12 = new tubeFeed(1200,55.5,820);
-let Osmolite15 = new tubeFeed(1500,62.7,762);
-let Pivot15 = new tubeFeed(1500,93.8,750);
-let Promote = new tubeFeed(1000,62.5,839);
-let PromoteWithFiber = new tubeFeed(1000,62.5,831);
-let Pulmocare = new tubeFeed(1500,62.6,785);
-let Suplena = new tubeFeed(1800,44.7,725.7);
-let TwoCalHN = new tubeFeed(2000,83.5,700);
-let Vital10 = new tubeFeed(1000,40,834);
-let VitalAF12 = new tubeFeed(1200,75,811);
-let Vital15 = new tubeFeed(1500,67.5,764);
-let VitalHighProtein = new tubeFeed(1000,87.3,836);
-let Compleat = new tubeFeed(1060,48,828);
-let Glytrol = new tubeFeed(1000,45.2,840);
-let Impact = new tubeFeed(1000,56,852);
-let ImpactPeptide15 = new tubeFeed(1500,94,770);
-let IsosourceHN = new tubeFeed(1200,54,808);
-let Nutren10 = new tubeFeed(1000,40,844);
-let Nutren10WithFiber = new tubeFeed(1000,40,848);
-let Nutren15 = new tubeFeed(1500,68,764);
-let Peptamen = new tubeFeed(1000,40,848);
-let Peptamen15 = new tubeFeed(1500,68,772);
-let Renalcal = new tubeFeed(1000,34,704);
-let Replete = new tubeFeed(1000,64,840);
-let Isosource15 = new tubeFeed(1500,68,760);
-let Nutren20 = new tubeFeed(2000,84,690);
-let DiabetisourceAC = new tubeFeed (1200,60,820);
-let NovasourceRenal = new tubeFeed (2000,90.7,720);
-let PeptamenAF12 = new tubeFeed(1200,76,810);
-let PeptamenIntenseVHP = new tubeFeed(1000,92,840);
-let VivonexRTF = new tubeFeed(1000,50,850);
-let KateFarmsStandard10 = new tubeFeed(1000,49.2,800);
-let KateFarmsStandard14 = new tubeFeed(1400,61.5,720);
-let KateFarmsPeptide10 = new tubeFeed(1000,49.2,790);
-let KateFarmsPeptide15 = new tubeFeed(1538,73.8,700);
-let kcal;
-let protein;
-let water;
-let TFformula;
 function calcTF(totalVolume)
 {
     if(TFformula =='KateFarmsPeptide15')
@@ -312,266 +313,266 @@ function calcTF(totalVolume)
         protein = Math.round(totalVolume*(KateFarmsPeptide15.protein/1000));
         water = Math.round(totalVolume*(KateFarmsPeptide15.water/1000));
     }
-    if(TFformula =='KateFarmsPeptide10')
+    else if(TFformula =='KateFarmsPeptide10')
     {
         kcal = Math.round(totalVolume*(KateFarmsPeptide10.kcal/1000));
         protein = Math.round(totalVolume*(KateFarmsPeptide10.protein/1000));
         water = Math.round(totalVolume*(KateFarmsPeptide10.water/1000));
     }
-    if(TFformula =='KateFarmsStandard14')
+    else if(TFformula =='KateFarmsStandard14')
     {
         kcal = Math.round(totalVolume*(KateFarmsStandard14.kcal/1000));
         protein = Math.round(totalVolume*(KateFarmsStandard14.protein/1000));
         water = Math.round(totalVolume*(KateFarmsStandard14.water/1000));
     }
-    if(TFformula =='KateFarmsStandard10')
+    else if(TFformula =='KateFarmsStandard10')
     {
         kcal = Math.round(totalVolume*(KateFarmsStandard10.kcal/1000));
         protein = Math.round(totalVolume*(KateFarmsStandard10.protein/1000));
         water = Math.round(totalVolume*(KateFarmsStandard10.water/1000));
     }
-    if(TFformula =='Isosource15')
+    else if(TFformula =='Isosource15')
     {
         kcal = Math.round(totalVolume*(Isosource15.kcal/1000));
         protein = Math.round(totalVolume*(Isosource15.protein/1000));
         water = Math.round(totalVolume*(Isosource15.water/1000));
     }
-    if(TFformula =='PeptamenAF12')
+    else if(TFformula =='PeptamenAF12')
     {
         kcal = Math.round(totalVolume*(PeptamenAF12.kcal/1000));
         protein = Math.round(totalVolume*(PeptamenAF12.protein/1000));
         water = Math.round(totalVolume*(PeptamenAF12.water/1000));
     }
-    if(TFformula =='FibersourceHN')
+    else if(TFformula =='FibersourceHN')
     {
         kcal = Math.round(totalVolume*(FibersourceHN.kcal/1000));
         protein = Math.round(totalVolume*(FibersourceHN.protein/1000));
         water = Math.round(totalVolume*(FibersourceHN.water/1000));
     }
-    if(TFformula =='Nutren20')
+    else if(TFformula =='Nutren20')
     {
         kcal = Math.round(totalVolume*(Nutren20.kcal/1000));
         protein = Math.round(totalVolume*(Nutren20.protein/1000));
         water = Math.round(totalVolume*(Nutren20.water/1000));
     }
-    if(TFformula =='Replete')
+    else if(TFformula =='Replete')
     {
         kcal = Math.round(totalVolume*(Replete.kcal/1000));
         protein = Math.round(totalVolume*(Replete.protein/1000));
         water = Math.round(totalVolume*(Replete.water/1000));
     }
-    if(TFformula =='DiabetisourceAC')
+    else if(TFformula =='DiabetisourceAC')
     {
         kcal = Math.round(totalVolume*(DiabetisourceAC.kcal/1000));
         protein = Math.round(totalVolume*(DiabetisourceAC.protein/1000));
         water = Math.round(totalVolume*(DiabetisourceAC.water/1000));
     }
-    if(TFformula =='NovasourceRenal')
+    else if(TFformula =='NovasourceRenal')
     {
         kcal = Math.round(totalVolume*(NovasourceRenal.kcal/1000));
         protein = Math.round(totalVolume*(NovasourceRenal.protein/1000));
         water = Math.round(totalVolume*(NovasourceRenal.water/1000));
     }
-    if(TFformula =='PeptamenIntenseVHP')
+    else if(TFformula =='PeptamenIntenseVHP')
     {
         kcal = Math.round(totalVolume*(PeptamenIntenseVHP.kcal/1000));
         protein = Math.round(totalVolume*(PeptamenIntenseVHP.protein/1000));
         water = Math.round(totalVolume*(PeptamenIntenseVHP.water/1000));
     }
-    if(TFformula =='VivonexRTF')
+    else if(TFformula =='VivonexRTF')
     {
         kcal = Math.round(totalVolume*(VivonexRTF.kcal/1000));
         protein = Math.round(totalVolume*(VivonexRTF.protein/1000));
         water = Math.round(totalVolume*(VivonexRTF.water/1000));
     }
-    if(TFformula =='Glucerna10')
+    else if(TFformula =='Glucerna10')
     {
         kcal = Math.round(totalVolume*(Glucerna10.kcal/1000));
         protein = Math.round(totalVolume*(Glucerna10.protein/1000));
         water = Math.round(totalVolume*(Glucerna10.water/1000));
     }
-    if(TFformula =='Glucerna12')
+    else if(TFformula =='Glucerna12')
     {
         kcal = Math.round(totalVolume*(Glucerna12.kcal/1000));
         protein = Math.round(totalVolume*(Glucerna12.protein/1000));
         water = Math.round(totalVolume*(Glucerna12.water/1000));
     }
-    if(TFformula =='Glucerna15')
+    else if(TFformula =='Glucerna15')
     {
         kcal = Math.round(totalVolume*(Glucerna15.kcal/1000));
         protein = Math.round(totalVolume*(Glucerna15.protein/1000));
         water = Math.round(totalVolume*(Glucerna15.water/1000));
     }
-    if(TFformula =='Jevity10')
+    else if(TFformula =='Jevity10')
     {
         kcal = Math.round(totalVolume*(Jevity10.kcal/1000));
         protein = Math.round(totalVolume*(Jevity10.protein/1000));
         water = Math.round(totalVolume*(Jevity10.water/1000));
     }
-    if(TFformula =='Jevity12')
+    else if(TFformula =='Jevity12')
     {
         kcal = Math.round(totalVolume*(Jevity12.kcal/1000));
         protein = Math.round(totalVolume*(Jevity12.protein/1000));
         water = Math.round(totalVolume*(Jevity12.water/1000));
     }
-    if(TFformula =='Jevity15')
+    else if(TFformula =='Jevity15')
     {
         kcal = Math.round(totalVolume*(Jevity15.kcal/1000));
         protein = Math.round(totalVolume*(Jevity15.protein/1000));
         water = Math.round(totalVolume*(Jevity15.water/1000));
     }
-    if(TFformula =='Nepro')
+    else if(TFformula =='Nepro')
     {
         kcal = Math.round(totalVolume*(Nepro.kcal/1000));
         protein = Math.round(totalVolume*(Nepro.protein/1000));
         water = Math.round(totalVolume*(Nepro.water/1000));
     }
-    if(TFformula =='Osmolite10')
+    else if(TFformula =='Osmolite10')
     {
         kcal = Math.round(totalVolume*(Osmolite10.kcal/1000));
         protein = Math.round(totalVolume*(Osmolite10.protein/1000));
         water = Math.round(totalVolume*(Osmolite10.water/1000));
     }
-    if(TFformula =='Osmolite12')
+    else if(TFformula =='Osmolite12')
     {
         kcal = Math.round(totalVolume*(Osmolite12.kcal/1000));
         protein = Math.round(totalVolume*(Osmolite12.protein/1000));
         water = Math.round(totalVolume*(Osmolite12.water/1000));
     }
-    if(TFformula =='Osmolite15')
+    else if(TFformula =='Osmolite15')
     {
         kcal = Math.round(totalVolume*(Osmolite15.kcal/1000));
         protein = Math.round(totalVolume*(Osmolite15.protein/1000));
         water = Math.round(totalVolume*(Osmolite15.water/1000));
     }
-    if(TFformula =='Pivot15')
+    else if(TFformula =='Pivot15')
     {
         kcal = Math.round(totalVolume*(Pivot15.kcal/1000));
         protein = Math.round(totalVolume*(Pivot15.protein/1000));
         water = Math.round(totalVolume*(Pivot15.water/1000));
     }
-    if(TFformula =='Promote')
+    else if(TFformula =='Promote')
     {
         kcal = Math.round(totalVolume*(Promote.kcal/1000));
         protein = Math.round(totalVolume*(Promote.protein/1000));
         water = Math.round(totalVolume*(Promote.water/1000));
     }
-    if(TFformula =='PromoteWithFiber')
+    else if(TFformula =='PromoteWithFiber')
     {
         kcal = Math.round(totalVolume*(PromoteWithFiber.kcal/1000));
         protein = Math.round(totalVolume*(PromoteWithFiber.protein/1000));
         water = Math.round(totalVolume*(PromoteWithFiber.water/1000));
     }
-    if(TFformula =='Pulmocare')
+    else if(TFformula =='Pulmocare')
     {
         kcal = Math.round(totalVolume*(Pulmocare.kcal/1000));
         protein = Math.round(totalVolume*(Pulmocare.protein/1000));
         water = Math.round(totalVolume*(Pulmocare.water/1000));
     }
-    if(TFformula =='Suplena')
+    else if(TFformula =='Suplena')
     {
         kcal = Math.round(totalVolume*(Suplena.kcal/1000));
         protein = Math.round(totalVolume*(Suplena.protein/1000));
         water = Math.round(totalVolume*(Suplena.water/1000));
     }
-    if(TFformula =='TwoCalHN')
+    else if(TFformula =='TwoCalHN')
     {
         kcal = Math.round(totalVolume*(TwoCalHN.kcal/1000));
         protein = Math.round(totalVolume*(TwoCalHN.protein/1000));
         water = Math.round(totalVolume*(TwoCalHN.water/1000));
     }
-    if(TFformula =='Vital10')
+    else if(TFformula =='Vital10')
     {
         kcal = Math.round(totalVolume*(Vital10.kcal/1000));
         protein = Math.round(totalVolume*(Vital10.protein/1000));
         water = Math.round(totalVolume*(Vital10.water/1000));
     }
-    if(TFformula =='VitalAF12')
+    else if(TFformula =='VitalAF12')
     {
         kcal = Math.round(totalVolume*(VitalAF12.kcal/1000));
         protein = Math.round(totalVolume*(VitalAF12.protein/1000));
         water = Math.round(totalVolume*(VitalAF12.water/1000));
     }
-    if(TFformula =='Vital15')
+    else if(TFformula =='Vital15')
     {
         kcal = Math.round(totalVolume*(Vital15.kcal/1000));
         protein = Math.round(totalVolume*(Vital15.protein/1000));
         water = Math.round(totalVolume*(Vital15.water/1000));
     }
-    if(TFformula =='VitalHighProtein')
+    else if(TFformula =='VitalHighProtein')
     {
         kcal = Math.round(totalVolume*(VitalHighProtein.kcal/1000));
         protein = Math.round(totalVolume*(VitalHighProtein.protein/1000));
         water = Math.round(totalVolume*(VitalHighProtein.water/1000));
     }
-    if(TFformula =='Compleat')
+    else if(TFformula =='Compleat')
     {
         kcal = Math.round(totalVolume*(Compleat.kcal/1000));
         protein = Math.round(totalVolume*(Compleat.protein/1000));
         water = Math.round(totalVolume*(Compleat.water/1000));
     }
-    if(TFformula =='Glytrol')
+    else if(TFformula =='Glytrol')
     {
         kcal = Math.round(totalVolume*(Glytrol.kcal/1000));
         protein = Math.round(totalVolume*(Glytrol.protein/1000));
         water = Math.round(totalVolume*(Glytrol.water/1000));
     }
-    if(TFformula =='Impact')
+    else if(TFformula =='Impact')
     {
         kcal = Math.round(totalVolume*(Impact.kcal/1000));
         protein = Math.round(totalVolume*(Impact.protein/1000));
         water = Math.round(totalVolume*(Impact.water/1000));
     }
-    if(TFformula =='ImpactPeptide15')
+    else if(TFformula =='ImpactPeptide15')
     {
         kcal = Math.round(totalVolume*(ImpactPeptide15.kcal/1000));
         protein = Math.round(totalVolume*(ImpactPeptide15.protein/1000));
         water = Math.round(totalVolume*(ImpactPeptide15.water/1000));
     }
-    if(TFformula =='IsosourceHN')
+    else if(TFformula =='IsosourceHN')
     {
         kcal = Math.round(totalVolume*(IsosourceHN.kcal/1000));
         protein = Math.round(totalVolume*(IsosourceHN.protein/1000));
         water = Math.round(totalVolume*(IsosourceHN.water/1000));
     }
-    if(TFformula =='Nutren10')
+    else if(TFformula =='Nutren10')
     {
         kcal = Math.round(totalVolume*(Nutren10.kcal/1000));
         protein = Math.round(totalVolume*(Nutren10.protein/1000));
         water = Math.round(totalVolume*(Nutren10.water/1000));
     }
-    if(TFformula =='Nutren10WithFiber')
+    else if(TFformula =='Nutren10WithFiber')
     {
         kcal = Math.round(totalVolume*(Nutren10WithFiber.kcal/1000));
         protein = Math.round(totalVolume*(Nutren10WithFiber.protein/1000));
         water = Math.round(totalVolume*(Nutren10WithFiber.water/1000));
     }
-    if(TFformula =='Nutren15')
+    else if(TFformula =='Nutren15')
     {
         kcal = Math.round(totalVolume*(Nutren15.kcal/1000));
         protein = Math.round(totalVolume*(Nutren15.protein/1000));
         water = Math.round(totalVolume*(Nutren15.water/1000));
     }
-    if(TFformula =='Peptamen')
+    else if(TFformula =='Peptamen')
     {
         kcal = Math.round(totalVolume*(Peptamen.kcal/1000));
         protein = Math.round(totalVolume*(Peptamen.protein/1000));
         water = Math.round(totalVolume*(Peptamen.water/1000));
     }
-    if(TFformula =='Peptamen15')
+    else if(TFformula =='Peptamen15')
     {
         kcal = Math.round(totalVolume*(Peptamen15.kcal/1000));
         protein = Math.round(totalVolume*(Peptamen15.protein/1000));
         water = Math.round(totalVolume*(Peptamen15.water/1000));
     }
-    if(TFformula =='Renalcal')
+    else if(TFformula =='Renalcal')
     {
         kcal = Math.round(totalVolume*(Renalcal.kcal/1000));
         protein = Math.round(totalVolume*(Renalcal.protein/1000));
         water = Math.round(totalVolume*(Renalcal.water/1000));
     }
 }
-function calcContinuous(formula,rate,hoursPerDay)
+function calcContinuous(formula,rate,hoursPerDay, modular, modularFrequency, flushVolume, flushAmount)
 {
     TFformula=formula;
     let totalVolume = rate * hoursPerDay;
@@ -580,7 +581,7 @@ function calcContinuous(formula,rate,hoursPerDay)
     document.getElementById('tfProtein').innerHTML = protein + 'g Protein';
     document.getElementById('tfWater').innerHTML = water + 'ml Free Water';
 }
-function calcBolus(formula,volume,bolusPerDay)
+function calcBolus(formula,volume,bolusPerDay, modular, modularFrequency, flushVolume, flushAmount)
 {
     TFformula=formula;
     let totalVolume = volume * bolusPerDay;

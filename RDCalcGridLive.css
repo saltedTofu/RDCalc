@@ -53,6 +53,7 @@ html{
     flex-wrap:wrap;
     background-color:white;
     justify-content:center;
+    min-height:800px;
 }
 .footer{
     grid-column: 1 / span 12;

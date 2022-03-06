@@ -1,4 +1,20 @@
 //global variables
+class tubeFeed{
+    constructor(kcal,protein,water){
+      this._kcal=kcal;
+      this._protein=protein;
+      this._water=water;
+    }
+    get kcal(){
+        return this._kcal;
+    }
+    get protein(){
+        return this._protein;
+    }
+    get water(){
+        return this._water;
+    }
+}
 let FibersourceHN = new tubeFeed(1200,54,810);
 let Glucerna10 = new tubeFeed(1000,41.8,853);
 let Glucerna12 = new tubeFeed(1200,60,805);
@@ -47,7 +63,10 @@ let kcal;
 let protein;
 let water;
 let TFformula;
-
+let modular=null;
+let modularFrequency=null;
+let flushVolume=null;
+let flushAmount=null;
 //Functions for calculating IBW/%IBW
 function calcIdealWeight(inchInput,feetInput,male,female,ABW,unit,LBKA,RBKA,LAKA,RAKA,para,quad)
 {
@@ -289,22 +308,7 @@ function navChangeBack(element)
     element.style.textShadow= '0px 0px 0px black';
 }
 //Class and function for calculating tube feeds
-class tubeFeed{
-    constructor(kcal,protein,water){
-      this._kcal=kcal;
-      this._protein=protein;
-      this._water=water;
-    }
-    get kcal(){
-        return this._kcal;
-    }
-    get protein(){
-        return this._protein;
-    }
-    get water(){
-        return this._water;
-    }
-}
+
 function calcTF(totalVolume)
 {
     if(TFformula =='KateFarmsPeptide15')
@@ -572,7 +576,7 @@ function calcTF(totalVolume)
         water = Math.round(totalVolume*(Renalcal.water/1000));
     }
 }
-function calcContinuous(formula,rate,hoursPerDay, modular, modularFrequency, flushVolume, flushAmount)
+function calcContinuous(formula,rate,hoursPerDay)
 {
     TFformula=formula;
     let totalVolume = rate * hoursPerDay;
@@ -581,7 +585,7 @@ function calcContinuous(formula,rate,hoursPerDay, modular, modularFrequency, flu
     document.getElementById('tfProtein').innerHTML = protein + 'g Protein';
     document.getElementById('tfWater').innerHTML = water + 'ml Free Water';
 }
-function calcBolus(formula,volume,bolusPerDay, modular, modularFrequency, flushVolume, flushAmount)
+function calcBolus(formula,volume,bolusPerDay)
 {
     TFformula=formula;
     let totalVolume = volume * bolusPerDay;

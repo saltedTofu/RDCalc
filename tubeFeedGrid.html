@@ -73,25 +73,13 @@
                         <option value= "VivonexRTF">Vivonex RTF</option> 
                     </select>
                     <br>
-                    <span>Modular</span>
-                    <select id="modular" name="modular">
-                        <option value= "none">None</option>
-                        <option value= "beneprotein">Beneprotein</option>
-                        <option value= "juven">Juven</option>
-                    </select>
-                    <br>
-                    <span>Water Flush</span>
-                    <input type="number" id="waterFlushAmount" name="waterFlushAmount">
-                    <span>ml every</span>
-                    <input type="number" id="waterFlushFrequency" name="waterFlushFrequency">
-                    <span>hours</span>
                     <div class = "continuous">
                         <br>
                         <h3>Continuous</h3>
                         <input id="tfRate" name="tfRate" type="range" min="5" max="100" step="1" oninput="showRate(this.value); calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value)">
                         <br>
                         <br>
-                        <input id=rateOutput name=rateOutput type="number" oninput="changeRateSlider(this.value); calcContinuous(document.getElementById('formula').value, this.value, document.getElementById('hours').value)">
+                        <input id=rateOutput name=rateOutput type="number" oninput="changeRateSlider(this.value); calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value)">
                         <p class="inline">ml/hr</p>
                         <p class="inline"> x </p>
                         <input id="hours" name="hours" type="number" oninput="calcContinuous(document.getElementById('formula').value, document.getElementById('tfRate').value, document.getElementById('hours').value)">
